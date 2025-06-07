@@ -49,3 +49,45 @@ This repository contains the backend API for project management platform. The AP
 ├── .gitignore               # Files/folders to ignore in Git
 ├── package.json             # Project dependencies and scripts
 ├── server.js                # Main server entry point
+
+## Setup Instructions
+
+Follow these steps to get the project up and running on your local machine.
+
+### Prerequisites
+
+* **Node.js**: Make sure you have Node.js (v14 or higher recommended) and npm installed.
+* **MongoDB**: Have a MongoDB instance running locally, or access to a cloud-based MongoDB (e.g., MongoDB Atlas).
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+    cd YOUR_REPO_NAME
+    ```
+    (Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub details)
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Create a `.env` file:**
+    Create a file named `.env` in the root of the project.
+    **Important:** This file should NOT be committed to version control.
+    ```
+    # .env
+    MONGO_URI=mongodb://localhost:27017/project_management_db # Or your MongoDB Atlas URI
+    JWT_SECRET=aVeryStrongAndLongRandomSecretKeyForJWT
+    PORT=5000
+    ```
+    * Replace `YOUR_MONGODB_URI` with your actual MongoDB connection string.
+    * Replace `aVeryStrongAndLongRandomSecretKeyForJWT` with a truly random, long string for security.
+
+4.  **Start the server:**
+    ```bash
+    node server.js
+    ```
+    The server should start on the port specified in your `.env` file (default: `5000`). You should see messages like "MongoDB Connected..." and "Server running on port 5000" in your terminal.
+
